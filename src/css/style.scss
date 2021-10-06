@@ -1,0 +1,63 @@
+body {
+   margin: 0;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.testimonials {
+    background: url("../img/who_we_are.jpg") no-repeat ;
+    background-size: cover;
+}
+
+.testimonials__block {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.testimonials__title {
+    font-weight: bold;
+    font-size: 56px;
+    color: #FFFFFF;
+}
+
+.testimonials__wrap-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.testimonials__card {
+    max-width: 30%;
+    margin: 0 20px;
+    min-width: 300px;
+}
+
+.testimonials__user-name {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.testimonials__box-stars {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-top: 20px;
+}
+
+.testimonials__user-desc {
+    padding-top: 15px;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.testimonials__link {
+    font-weight: bold;
+    font-size: 24px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
