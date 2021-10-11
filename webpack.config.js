@@ -2,6 +2,7 @@
 const path = require("path");
 const webpack = require('webpack')
 // plugins
+const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 
@@ -31,12 +32,12 @@ module.exports = {
         use: ['babel-loader']
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
-      },
-      {
-        test: /\.(svg)$/,
-        type: 'asset/inline',
+        test: /\.(png)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
       },
       {
         test: /\.(scss|css)$/,
@@ -45,11 +46,16 @@ module.exports = {
     ]
   },
   plugins: [
-     new HtmlWebpackPlugin({
-       title: 'webpack template',
-       template: path.resolve(__dirname, './src/index.html'),
-       filename: "index.html",
-     }),
-     new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'webpack template',
+      template: path.resolve(__dirname, './src/index.html'),
+      filename: "index.html",
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: "src/img", to: 'img' },
+      ],
+    }),
+    new CleanWebpackPlugin(),
   ]
 }

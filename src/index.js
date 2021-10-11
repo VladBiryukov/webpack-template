@@ -8,7 +8,4 @@ class Game {
 }
 const myGame = new Game()
 
-console.log(myGame)
-console.log(someModel)
-console.log(1)
 
