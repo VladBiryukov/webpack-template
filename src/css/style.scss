@@ -7,10 +7,10 @@ body {
     margin: 0 auto;
 }
 
-.testimonials {
-    background: url("../img/who_we_are.jpg") no-repeat ;
-    background-size: cover;
-}
+//.testimonials {
+//    background: url("../img/who_we_are.jpg") no-repeat ;
+//    background-size: cover;
+//}
 
 .testimonials__block {
     padding-top: 60px;
@@ -60,4 +60,46 @@ body {
     font-size: 24px;
     color: #FFFFFF;
     text-decoration: none;
+}
+
+.header__navigation {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header__link {
+  color: #FFFFFF;
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+.header__phone {
+  color: #F6674D;
+  font-size: 18px;
+}
+
+.header__block {
+  padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__button-contact-us {
+  padding: 8px 20px;
+  background: #F6674D;
+  border-color: #F6674D;
+  border-radius: 20px;
+  border-width: 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.img-who-we-are {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  max-height: 580px;
+  object-fit: cover;
 }
