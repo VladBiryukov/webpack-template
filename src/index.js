@@ -1,11 +1,11 @@
-import "./css/style.scss"
-import "./css/resetStyles.css"
+import "./styles/style.scss"
+import "./styles/resetStyles.scss"
 export const someModel = {
   key: 'value'
 }
-class Game {
-  name = 'Violin Charades'
+class SomeClass {
+  name = 'Vlad'
 }
-const myGame = new Game()
+const someClass = new SomeClass()
 
 

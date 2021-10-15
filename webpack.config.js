@@ -9,10 +9,10 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 
 
 const pages = fs
-   .readdirSync(path.resolve(__dirname, 'src'))
+   .readdirSync(path.resolve(__dirname, 'src/pages'))
    .filter(fileName => fileName.endsWith('.html'))
    .map(htmlPath => ({
-     template: path.resolve(__dirname,  `./src/${htmlPath}`),
+     template: path.resolve(__dirname,  `./src/pages/${htmlPath}`),
      filename: htmlPath,
    }))
 
@@ -66,7 +66,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: "src/img", to: 'img' },
-        { from: 'src/css', to: 'css' },
+        { from: 'src/styles', to: 'styles' },
       ],
     }),
     new CleanWebpackPlugin(),
