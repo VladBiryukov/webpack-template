@@ -1,10 +1,22 @@
 // base
 const path = require("path");
 const webpack = require('webpack')
+const fs = require('fs')
 // plugins
 const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
+
+
+const pages = fs
+   .readdirSync(path.resolve(__dirname, 'src'))
+   .filter(fileName => fileName.endsWith('.html'))
+   .map(htmlPath => ({
+     template: path.resolve(__dirname,  `./src/${htmlPath}`),
+     filename: htmlPath,
+   }))
+
+
 
 module.exports = {
   mode: 'development',
@@ -46,14 +58,15 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: 'webpack template',
-      template: path.resolve(__dirname, './src/index.html'),
-      filename: "index.html",
-    }),
+     ...pages.map(options => (
+        new HtmlWebpackPlugin({
+          ...options
+        })
+     )),
     new CopyPlugin({
       patterns: [
         { from: "src/img", to: 'img' },
+        { from: 'src/css', to: 'css' },
       ],
     }),
     new CleanWebpackPlugin(),
